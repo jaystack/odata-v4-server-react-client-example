@@ -1,0 +1,47 @@
+{
+  "name": "odata-v4-server-react-client-example",
+  "version": "0.1.0",
+  "description": "React client example for odata-v4-server api",
+  "main": "src/index.js",
+  "scripts": {
+    "webpack": "webpack",
+    "webpack:w": "webpack --progress --watch",
+    "build": "npm run webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaystack/odata-v4-server-react-client-example.git"
+  },
+  "keywords": [
+    "react",
+    "odata",
+    "v4",
+    "example"
+  ],
+  "author": "JayStack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaystack/odata-v4-server-react-client-example/issues"
+  },
+  "homepage": "https://github.com/jaystack/odata-v4-server-react-client-example#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.13.3"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.16.0",
+    "cors": "^2.8.1",
+    "deep-equal": "^1.0.1",
+    "express": "^4.14.0",
+    "material-ui": "^0.16.4",
+    "query-string": "^4.2.3",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0"
+  }
+}
