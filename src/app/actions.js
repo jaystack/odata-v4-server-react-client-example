@@ -95,7 +95,7 @@ function rejectGetCategoryProducts(error) {
 export function addProductToCategory(productId) {
   const categoryId = getSelectedCategoryId();
   store.dispatch({ type: actionTypes.ADD_PRODUCT_TO_CATEGORY, categoryId, productId });
-  api.post(`/Categories('${categoryId}')/Products/$ref`, { "@odata.id": `${HOST}/Products('${productId}')` })
+  api.post(`/Categories('${categoryId}')/Products/$ref`, { "@odata.id": `/Products('${productId}')` })
     .then(resolveAddProductToCategory.bind(null, categoryId, productId), rejectAddProductToCategory);
 }
 
@@ -111,7 +111,7 @@ function rejectAddProductToCategory(error) {
 export function deleteProductFromCategory(productId) {
   const categoryId = getSelectedCategoryId();
   store.dispatch({ type: actionTypes.DELETE_PRODUCT_FROM_CATEGORY, categoryId, productId });
-  api.delete(`/Categories('${categoryId}')/Products/$ref?$id=${HOST}/Products('${productId}')`)
+  api.delete(`/Categories('${categoryId}')/Products/$ref?$id=/Products('${productId}')`)
     .then(resolveDeleteProductFromCategory.bind(null, categoryId, productId), rejectDeleteProductFromCategory);
 }
 
@@ -282,7 +282,7 @@ export function setProductCategory(categoryId) {
   const prevCategoryId = product.CategoryId || null;
   store.dispatch({ type: actionTypes.SET_PRODUCT_CATEGORY, productId, categoryId, prevCategoryId });
   if (categoryId) {
-    api.post(`/Products('${productId}')/Category/$ref`, { "@odata.id": `${HOST}/Categories('${categoryId}')` })
+    api.post(`/Products('${productId}')/Category/$ref`, { "@odata.id": `/Categories('${categoryId}')` })
       .then(resolveSetProductCategory.bind(null, productId, categoryId, prevCategoryId), rejectSetProductCategory);
   } else {
     api.delete(`/Products('${productId}')/Category/$ref`)
