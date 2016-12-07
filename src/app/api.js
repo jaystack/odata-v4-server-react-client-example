@@ -1,6 +1,7 @@
 import * as queryString from "query-string";
 
 export const HOST = "http://odata-v4-demo.jaystack.net/api";
+const headers = new Headers({"Content-Type": "application/json"});
 
 async function resolveDocs(response) {
 	const text = await response.text();
@@ -12,8 +13,6 @@ async function resolveDocs(response) {
 
 async function call(method, url, content) {
 	const isContent = content && Object.keys(content).length > 0;
-	const headers = new Headers();
-	headers.append("Content-Type", "application/json");
 	if (method === 'GET')
 		return await fetch(`${HOST}${url}${isContent ? '?'+queryString.stringify(content) : ''}`, { method, headers }).then(resolveDocs);
 	else
