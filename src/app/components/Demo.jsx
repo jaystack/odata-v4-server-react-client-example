@@ -2,7 +2,7 @@ import React from "react";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import { Tabs, Tab } from 'material-ui/Tabs';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import CategoriesPage from "./CategoriesPage";
 import ProductsPage from "./ProductsPage";
 import { getCategories, getProducts, initDb } from "../actions";
@@ -28,7 +28,8 @@ export default class Demo extends React.Component {
 						style={{ flex: "0 0 auto" }}
 						title="Northwind"
 						showMenuIconButton={false}
-						iconElementRight={<FlatButton label="Init DB" onTouchTap={initDb} />}
+						iconElementRight={<RaisedButton label="Init DB" onTouchTap={initDb} />}
+						iconStyleRight={{ margin: 0, display: "flex", alignItems: "center" }}
 						/>
 					<Tabs
 						style={{ display: "flex", flexGrow: 1, flexDirection: "column" }}
