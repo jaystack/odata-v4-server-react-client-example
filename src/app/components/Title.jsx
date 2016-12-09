@@ -8,6 +8,7 @@ export default function Title() {
                 display: "inline-block",
                 position: "relative",
                 marginRight: "35px",
+                marginBottom: "15px",
                 top: "14px",
                 width: "202px",
                 height: "40px",
@@ -16,7 +17,14 @@ export default function Title() {
             <h1 style={{
                 lineHeight: '43px'
             }}>Northwind
-				<span>React example client for JayStack OData v4 Server</span>
+				<br />
+                <span
+                    style={{
+                        fontSize: "60%",
+                        position: "relative",
+                        top: "-19px"
+                    }} 
+                >React example client for JayStack OData v4 Server</span>
             </h1>
         </div>
     )
