@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import DescriptionPage from "./DescriptionPage";
 import CategoriesPage from "./CategoriesPage";
 import ProductsPage from "./ProductsPage";
-import { getCategories, getProducts, initDb } from "../actions";
+import { switchPage, getCategories, getProducts, initDb } from "../actions";
 
 export default class Demo extends React.Component {
 
@@ -47,11 +47,12 @@ export default class Demo extends React.Component {
 						contentContainerStyle={{ flexGrow: 1, position: "relative" }}
 						tabTemplateStyle={{ display: "flex", position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }}
 						tabItemContainerStyle={{ flex: "0 0 auto" }}
+						value={this.props.state.page}
 						>
-						<Tab label="Home">
+						<Tab label="Home" value="home" onActive={() => switchPage("home")}>
 							<DescriptionPage />
 						</Tab>
-						<Tab label="Categories">
+						<Tab label="Categories" value="categories" onActive={() => switchPage("categories")}>
 							<CategoriesPage
 								categories={this.props.state.categories}
 								products={this.props.state.products}
@@ -59,7 +60,7 @@ export default class Demo extends React.Component {
 								selectedCategory={this.props.state.selectedCategory}
 								/>
 						</Tab>
-						<Tab label="Products">
+						<Tab label="Products" value="products" onActive={() => switchPage("products")}>
 							<ProductsPage
 								products={this.props.state.products}
 								productFilter={this.props.state.productFilter}

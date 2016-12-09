@@ -6,6 +6,10 @@ import getSelectedProductId from "./utils/getSelectedProductId";
 import getCategoryModifications from "./utils/getCategoryModifications";
 import getProductModifications from "./utils/getProductModifications";
 
+export function switchPage(page) {
+  store.dispatch({ type: actionTypes.SWITCH_PAGE, page });
+}
+
 export function initDb() {
   store.dispatch({ type: actionTypes.INIT_DB });
   api.post("/initDb").then(resolveInitDb, rejectInitDb);
