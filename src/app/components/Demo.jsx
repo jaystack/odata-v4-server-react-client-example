@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import RaisedButton from 'material-ui/RaisedButton';
+import DescriptionPage from "./DescriptionPage";
 import CategoriesPage from "./CategoriesPage";
 import ProductsPage from "./ProductsPage";
 import { getCategories, getProducts, initDb } from "../actions";
@@ -47,6 +48,9 @@ export default class Demo extends React.Component {
 						tabTemplateStyle={{ display: "flex", position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }}
 						tabItemContainerStyle={{ flex: "0 0 auto" }}
 						>
+						<Tab label="Home">
+							<DescriptionPage />
+						</Tab>
 						<Tab label="Categories">
 							<CategoriesPage
 								categories={this.props.state.categories}
