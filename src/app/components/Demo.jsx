@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import RaisedButton from 'material-ui/RaisedButton';
+import Title from "./Title";
 import DescriptionPage from "./DescriptionPage";
 import CategoriesPage from "./CategoriesPage";
 import ProductsPage from "./ProductsPage";
@@ -27,37 +28,11 @@ export default class Demo extends React.Component {
 				}}>
 					<AppBar
 						style={{ flex: "0 0 auto" }}
-						title={<div>
-							<span style={{
-									float: "left",
-									display: "inline-block",
-									position: "relative",
-									marginRight: "35px",
-									top: "14px",
-									width: "202px",
-									height: "40px",
-									background: "url(logo.png) center no-repeat"
-							}}></span>
-							<h1 style={{
-								lineHeight: '43px' 
-							}}>Northwind <span style={{
-									float: "left",
-									display: "inline-block",
-									position: "relative",
-									marginRight: "35px",
-									top: "14px",
-									width: "202px",
-									height: "40px",
-									background: "url(logo.png) center no-repeat"
-							}}>React example client for JayStack OData v4 Server</span></h1>
-							
-						</div>}
+						title={<Title />}
 						showMenuIconButton={false}
 						iconElementRight={<RaisedButton label="Init DB" onTouchTap={initDb} />}
 						iconStyleRight={{ margin: 0, display: "flex", alignItems: "center" }}
-						>
-					
-						</AppBar>
+						/>
 					<Tabs
 						style={{ display: "flex", flexGrow: 1, flexDirection: "column" }}
 						contentContainerStyle={{ flexGrow: 1, position: "relative" }}
