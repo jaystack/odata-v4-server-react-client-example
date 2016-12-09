@@ -1,5 +1,7 @@
 export default {
 
+	SWITCH_PAGE: Symbol("SWITCH_PAGE"),
+
 	INIT_DB: Symbol("INIT_DB"),
 	RESOLVE_INIT_DB: Symbol("RESOLVE_INIT_DB"),
 	REJECT_INIT_DB: Symbol("REJECT_INIT_DB"),
