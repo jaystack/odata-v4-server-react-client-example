@@ -26,11 +26,21 @@ export default class Demo extends React.Component {
 				}}>
 					<AppBar
 						style={{ flex: "0 0 auto" }}
-						title="Northwind"
+						title={<h1><span style={{
+							display: "inline-block",
+							position: "relative",
+							marginRight: "35px",
+							top: "14px",
+							width: "202px",
+							height: "40px",
+							background: "url(/logo.png) center no-repeat"
+						}}></span>React example client for JayStack OData v4 Server</h1>}
 						showMenuIconButton={false}
 						iconElementRight={<RaisedButton label="Init DB" onTouchTap={initDb} />}
 						iconStyleRight={{ margin: 0, display: "flex", alignItems: "center" }}
-						/>
+						>
+					
+						</AppBar>
 					<Tabs
 						style={{ display: "flex", flexGrow: 1, flexDirection: "column" }}
 						contentContainerStyle={{ flexGrow: 1, position: "relative" }}
