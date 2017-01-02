@@ -65,7 +65,7 @@ export default class ProductProperties extends React.Component {
 						onCheck={(_, checked) => modifyProduct("Discontinued", checked)}
 						/>
 				</CardText>
-				<CardActions>
+				<CardActions style={{ display: "flex", justifyContent: "flex-end" }}>
 					<RaisedButton label="Save" primary={true} disabled={!areChanges()} onTouchTap={saveProductModifications} />
 					<RaisedButton label="Discard" disabled={!areChanges()} onTouchTap={discardProductModifications} />
 					<RaisedButton label="Delete" secondary={true} disabled={this.state.isOpenConfirmDialog} onTouchTap={() => this.handleDelete()} />

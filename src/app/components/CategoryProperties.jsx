@@ -52,7 +52,7 @@ export default class CategoryProperties extends React.Component {
         <CardActions style={{ display: "flex", justifyContent: "flex-end" }}>
           <RaisedButton label="Save" primary={true} disabled={!areChanges()} onTouchTap={saveCategoryModifications} />
           <RaisedButton label="Discard" disabled={!areChanges()} onTouchTap={discardCategoryModifications} />
-          <RaisedButton label="Delete" backgroundColor="#F44336" labelColor="white" disabled={this.state.isOpenConfirmDialog} onTouchTap={() => this.handleDelete()} />
+          <RaisedButton label="Delete" secondary={true} disabled={this.state.isOpenConfirmDialog} onTouchTap={() => this.handleDelete()} />
           <ConfirmDialog
             open={this.state.isOpenConfirmDialog}
             text={`Are your sure you want to delete this category: ${this.props.selectedCategory.Name} ?`}
